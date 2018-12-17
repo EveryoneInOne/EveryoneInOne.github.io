@@ -25,12 +25,15 @@ $(document).ready(function(){
     }
     
      );
-    
+    //lista obiektów typu checkbox
+    var overlays = {
+        "wykaz wojewodztw":lyrPRGWOJ}
+    ;
     
     var lyrOSM = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
     mymap.addLayer(lyrOSM);
     
-    var BaseMaps = {"OpenStreetMaps":lyrOSM,"ORTOFTOMAPA":lyrORTO,"Mapa Sozologiczna":lyrSOZO,"Wykaz Wojewodztw":lyrPRGWOJ};
-    L.control.layers(BaseMaps).addTo(mymap);
+    var BaseMaps = {"OpenStreetMaps":lyrOSM,"ORTOFTOMAPA":lyrORTO,"Mapa Sozologiczna":lyrSOZO,};
+    L.control.layers(BaseMaps,overlays).addTo(mymap);
     L.control.scale({imperial:false}).addTo(mymap);
 });
