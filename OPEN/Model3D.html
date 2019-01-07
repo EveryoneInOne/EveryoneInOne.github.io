@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Intro to SceneLayer - 4.10</title>
+  <title>Create a layer from a portal item - 4.10</title>
+
   <style>
     html,
     body,
@@ -12,34 +13,40 @@
       margin: 0;
       height: 100%;
       width: 100%;
+      overflow: hidden;
     }
   </style>
 
   <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+
   <script src="https://js.arcgis.com/4.10/"></script>
 
   <script>
     require([
       "esri/Map",
       "esri/views/SceneView",
-      "esri/layers/SceneLayer"
-    ], function(Map, SceneView, SceneLayer,) {
+      "esri/layers/Layer"
+    ], function(
+      Map, SceneView, Layer
+    ) {
 
-      // Create Map
       var map = new Map({
-        basemap: "streets",
-        
+        basemap: "gray"
       });
 
-      // Create the SceneView
-      var view = new SceneView({
-        container: "viewDiv",
-        map: map,
-        scale: 50000000,
-        center: [52.252874, 20.895779]
+     var view = new SceneView({
+          container: "viewDiv",
+          map: map,
+
+          extent: { // autocasts as new Extent()
+            xmin:  20.8764216925164,
+            ymin: 52.246683564086,
+            xmax: 20.9063647882041,
+            ymax: 52.26101012941,
+            spatialReference: 4326}
       });
 
-      // Create SceneLayer and add to the map
+
       Layer.fromPortalItem({
           portalItem: { // autocasts as new PortalItem()
             id: "9dbe63645e564574bd466c45ed4dca93"
