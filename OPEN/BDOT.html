@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Intro to FeatureLayer - 4.10</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.10/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+      #topbar {
+      background: #fff;
+      padding: 10px;
+    }
+
+    .action-button {
+      font-size: 16px;
+      background-color: transparent;
+      border: 1px solid #000099;
+      color: #800000;
+      height: 32px;
+      width: 32px;
+      text-align: center;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .action-button:hover,
+    .action-button:focus {
+      background: #0079c1;
+      color: #e4e4e4;
+    }
+
+    .active {
+      background: #0079c1;
+      color: #e4e4e4;
+
+  </style>
+
+  <script>
+    require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer",
+        "esri/widgets/CoordinateConversion",
+        "esri/widgets/LayerList",
+        "esri/widgets/DistanceMeasurement2D",
+        "esri/widgets/AreaMeasurement2D",
+        "esri/widgets/Sketch",
+        "esri/layers/GraphicsLayer",
+        "esri/widgets/Expand",
+        "esri/widgets/BasemapGallery",
+        "esri/widgets/Legend",
+        "esri/widgets/Search",
+        "esri/widgets/Print",
+        "esri/widgets/Expand",
+
+        
+      ],
+      function(
+        Map, MapView,
+        FeatureLayer,CoordinateConversion,LayerList, DistanceMeasurement2D,
+      AreaMeasurement2D,Sketch,GraphicsLayer,Expand,BasemapGallery,Legend,Search,Print
+      ) {
+        var activeWidget = null;
+       
+        const layer = new GraphicsLayer();
+        
+        var map = new Map({
+          basemap: "streets",
+          layers:  [layer]
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+
+          extent: { // autocasts as new Extent()
+            xmin:  20.8764216925164,
+            ymin: 52.246683564086,
+            xmax: 20.9063647882041,
+            ymax: 52.26101012941,
+            spatialReference: 4326
+          }
+        });
+        
+
+        
+        
+        
+      var search = new Search({
+        view: view
+      });
+
+      
+      view.ui.add(search, "top-right");
+        
+     
+      
+        view.when(function() {
+        var layerList = new LayerList({
+          view: view,
+            container: document.createElement("div")
+        });
+   
+layerListExpand = new Expand({
+  expandIconClass: "esri-icon-layer-list",  
+  content: layerList.domNode
+});
+            view.ui.add(layerListExpand, "top-right");            
+      
+        view.ui.add(layerList, "top-right");
+            
+      });
+        
+ 
+      var basemapGallery = new BasemapGallery({
+        view: view,
+        container: document.createElement("div")
+      });
+
+
+      var bgExpand = new Expand({
+        view: view,
+        content: basemapGallery
+          
+      });
+
+
+      basemapGallery.watch("activeBasemap", function() {
+        var mobileSize = view.heightBreakpoint === "xsmall" || view.widthBreakpoint ===
+          "xsmall";
+
+        if (mobileSize) {
+          bgExpand.collapse();
+        }
+      });
+
+
+
+      view.ui.add(bgExpand, "top-right");
+        
+
+      
+         const legend = new Expand({
+          content: new Legend({
+            view: view,
+            style: "card" 
+          }),
+          view: view,
+          expanded: true
+        });
+        view.ui.add(legend, "bottom-left");      
+        
+        
+        
+        
+        
+
+             
+   var ccWidget = new CoordinateConversion({
+        view: view
+      }); 
+     view.ui.add(ccWidget, "bottom-left");   
+        
+        view.when(function() {
+          var print = new Print({
+            view: view,
+            
+            printServiceUrl: "https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
+          });
+
+         
+          view.ui.add(print, "top-left");
+        });
+        
+ 
+      
+    
+     
+        
+        
+        
+        
+        view.when(function() {
+
+        const sketch = new Sketch({
+  view,
+  layer: layer
+});
+
+        view.ui.add(sketch, "bottom-left");
+      });
+        
+        
+        
+        
+        
+        
+        var activeWidget = null;     
+        
+  view.ui.add("topbar", "top-left");
+   
+            document.getElementById("distanceButton").addEventListener("click",
+        function () {
+          setActiveWidget(null);
+          if (!this.classList.contains('active')) {
+            setActiveWidget('distance');
+          } else {
+            setActiveButton(null);
+          }
+        });
+
+      document.getElementById("areaButton").addEventListener("click",
+        function () {
+          setActiveWidget(null);
+          if (!this.classList.contains('active')) {
+            setActiveWidget('area');
+          } else {
+            setActiveButton(null);
+          }
+        });
+
+      function setActiveWidget(type) {
+        switch (type) {
+          case "distance":
+            activeWidget = new DistanceMeasurement2D({
+              view: view
+            });
+
+            // skip the initial 'new measurement' button
+            activeWidget.viewModel.newMeasurement();
+
+            view.ui.add(activeWidget, "top-right");
+            setActiveButton(document.getElementById('distanceButton'));
+            break;
+          case "area":
+            activeWidget = new AreaMeasurement2D({
+              view: view
+            });
+
+            // skip the initial 'new measurement' button
+            activeWidget.viewModel.newMeasurement();
+
+            view.ui.add(activeWidget, "top-right");
+            setActiveButton(document.getElementById('areaButton'));
+            break;
+          case null:
+            if (activeWidget) {
+              view.ui.remove(activeWidget);
+              activeWidget.destroy();
+              activeWidget = null;
+            }
+            break;
+        }
+      }
+
+      function setActiveButton(selectedButton) {
+        // focus the view to activate keyboard shortcuts for sketching
+        view.focus();
+        var elements = document.getElementsByClassName("active");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].classList.remove("active");
+        }
+        if (selectedButton) {
+          selectedButton.classList.add("active");
+        }
+      }      
+      
+        var template = { 
+  title: "Budynki",
+  content: [{
+    type: "fields",
+    fieldInfos: [{
+      fieldName: "OBJECTEDID",
+      label: "NR",
+      visible: true
+    }, {
+      fieldName: "liczbaKOND",
+      label: "liczba kondygnacji",
+      visible: true
+     
+    }]
+  }]
+};
+        
+        var Feature= new FeatureLayer({
+          url: "https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/11",
+            outFields: ["*"],
+        popupTemplate: template
+        });
+        
+        var SKJZ = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/10",
+        });
+        
+        var BUIT_P = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/0"
+        
+        });
+        var OIKM_P = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/1"
+        });
+        
+        
+        var OIPR_P = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/2"
+        });
+        var BUIB_L = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/3"
+        });
+        var BUIN_L = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/4"
+        });
+        var BUSP_L =  new FeatureLayer({
+            
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/5"
+        });
+        var BUZM_L = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/6"
+        });
+        var OIKM_L = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/7"
+        });
+        var PTLZ_A = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/20"
+        });
+   
+        var KUMN_A = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/16"
+        });
+        var KUOS_A = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/17"
+        });
+        var PPTR_A = new FeatureLayer({
+            url:"https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/22"
+        });
+     
+      
+
+        var overlays = {"BUBD_A":Feature,"SKJZ_L":SKJZ,};
+        map.add(Feature);
+        map.add(SKJZ);
+        map.add(BUIT_P);
+        map.add(OIKM_P);
+        map.add(OIPR_P);
+        map.add(BUIB_L);
+        map.add(BUIN_L);
+        map.add(BUSP_L);
+        map.add(BUZM_L);
+        map.add(OIKM_L);
+        map.add(PTLZ_A);
+        map.add(KUMN_A);
+        map.add(KUOS_A);
+        map.add(PPTR_A);
+       
+        
+        
+        
+        
+        
+               
+    
+        
+        
+        
+        
+        
+        
+        
+        L.control.layers(overlays).addTo(Map);
+    L.control.scale({imperial:false}).addTo(Map);
+        
+
+
+        
+        
+ 
+       
+
+      
+    });
+  </script>
+</head>
+
+<body class="calcite">
+    <div id="viewDiv"></div>
+    
+    <div id="topbar">
+    <button class="action-button esri-icon-minus" id="distanceButton" type="button"
+      title="Measure distance between two or more points"></button>
+    <button class="action-button esri-icon-polygon" id="areaButton" type="button"
+      title="Measure area"></button>
+    
+        </div>
+</body>
+
+</html>

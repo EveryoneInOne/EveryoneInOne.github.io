@@ -23,7 +23,7 @@
       "esri/Map",
       "esri/views/SceneView",
       "esri/layers/SceneLayer"
-    ], function(Map, SceneView, SceneLayer) {
+    ], function(Map, SceneView, SceneLayer,) {
 
       // Create Map
       var map = new Map({
@@ -40,30 +40,66 @@
       });
 
       // Create SceneLayer and add to the map
-      var sceneLayer = new SceneLayer({
-        portalItem: {
-          id: "efdf2837bf854d4b9e035d4fd30fc56c"
-        },
-        popupEnabled: false
-      });
-      map.add(sceneLayer);
-
-      // Create MeshSymbol3D for symbolizing SceneLayer
-      var symbol = {
-        type: "mesh-3d", // autocasts as new MeshSymbol3D()
-        symbolLayers: [{
-          type: "fill", // autocasts as new FillSymbol3DLayer()
-          // If the value of material is not assigned, the default color will be grey
-          material: {
-            color: [244, 247, 134]
+      Layer.fromPortalItem({
+          portalItem: { // autocasts as new PortalItem()
+            id: "9dbe63645e564574bd466c45ed4dca93"
           }
-        }]
-      };
-      // Add the renderer to sceneLayer
-      sceneLayer.renderer = {
-        type: "simple", // autocasts as new SimpleRenderer()
-        symbol: symbol
-      };
+        }).then(addLayer)
+        .catch(rejection);
+      // Adds the layer to the map once it loads
+      function addLayer(layer) {
+        map.add(layer);
+      }
+      
+      
+  Layer.fromPortalItem({
+          portalItem: { // autocasts as new PortalItem()
+            id: "efdf2837bf854d4b9e035d4fd30fc56c"
+          }
+    
+   }).then(addLayer)
+        .catch(rejection);
+      // Adds the layer to the map once it loads
+      function addLayer(layer) {
+        map.add(layer);
+      }
+       Layer.fromPortalItem({
+          portalItem: { // autocasts as new PortalItem()
+            id: "6f694c1a61a44185a8ee61b51ba9418e"
+          }
+       }).then(addLayer)
+        .catch(rejection);
+      function addLayer(layer) {
+        map.add(layer);
+      }
+      
+      
+      
+             Layer.fromPortalItem({
+          portalItem: { // autocasts as new PortalItem()
+            id: "b6e102874b7d4aa1b0e0ca031fcd527c"
+          }
+       }).then(addLayer)
+        .catch(rejection);
+      function addLayer(layer) {
+        map.add(layer);
+      }
+      
+                  Layer.fromPortalItem({
+          portalItem: { // autocasts as new PortalItem()
+            id: "ebac12c106714630a2b48d59a7da78bc"
+          }
+       }).then(addLayer)
+        .catch(rejection);
+      function addLayer(layer) {
+        map.add(layer);
+      }
+
+
+ 
+      function rejection(error) {
+        console.log("Layer failed to load: ", error);
+      }
     });
   </script>
 </head>
@@ -71,4 +107,5 @@
 <body>
   <div id="viewDiv"></div>
 </body>
+
 </html>
