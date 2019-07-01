@@ -7,6 +7,8 @@
 
   <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
   <script src="https://js.arcgis.com/4.10/"></script>
+    
+   
 
   <style>
     html,
@@ -62,6 +64,10 @@
         "esri/widgets/Search",
         "esri/widgets/Print",
         "esri/widgets/Expand",
+        
+        
+        
+       
 
         
       ],
@@ -294,8 +300,7 @@ layerListExpand = new Expand({
         
         var Feature= new FeatureLayer({
           url: "https://services5.arcgis.com/uID8wkC2Vn7MxK6S/arcgis/rest/services/WARSTWY/FeatureServer/11",
-            outFields: ["*"],
-        popupTemplate: template
+           
         });
         
         var SKJZ = new FeatureLayer({
@@ -380,6 +385,9 @@ layerListExpand = new Expand({
     L.control.scale({imperial:false}).addTo(Map);
         
 
+    });
+
+
 
         
         
@@ -387,7 +395,8 @@ layerListExpand = new Expand({
        
 
       
-    });
+   
+     
   </script>
 </head>
 
