@@ -98,7 +98,7 @@ $(document).ready(function(){
 
 
 	});
-    	mojaMapa.on('click', function(e){
+    	mojaMapa.on('dblclick', function(e){
 		var zmienna_formularz_SZER = e.latlng.lat;
 		var zmienna_formularz_DL = e.latlng.lng;
 		var formularz_zmienna_1='';
