@@ -81,7 +81,24 @@ $(document).ready(function(){
 //	L.imageOverlay(imageUstka, imageBounds).addTo(mojaMapa);
 
 //dodaje markera
+    var myIcon = L.icon({
+	iconUrl: 'leaf-red.png'
+    
+    
+    });
+    
 	mojaMapa.on('click', function(e){
+		var zmienna_formularz_SZER = e.latlng.lat;
+		var zmienna_formularz_DL = e.latlng.lng;
+		var formularz_zmienna_1='';
+		var formularz_zmienna_2='';
+		
+		L.marker(e.latlng,{icon: myIcon}).bindPopup('<form action="query_insert.php" method="post" id="myForm"><h1>Formularz do wprowadzania danych do bazy danych</h1><br/>pierwsza_zmienna_opisowa<br/><input type="text" value="znacznik" name="formularz_zmienna_1"/><br/>druga_zmienna_numeryczna<br/><input type="text" name="formularz_zmienna_2" value="10"/><br/>Szerokość Geograficzna<br/><input type="text" name="zmienna_formularz_SZER" value='+zmienna_formularz_SZER+'><br/> Długość Geograficzna<br/><input type="text" name="zmienna_formularz_DL" value='+zmienna_formularz_DL+'><br/><br/><input type="button" value="wyślij formularz" id="wyslij"></form>').addTo(mojaMapa);
+		
+
+
+	});
+    	mojaMapa.on('click', function(e){
 		var zmienna_formularz_SZER = e.latlng.lat;
 		var zmienna_formularz_DL = e.latlng.lng;
 		var formularz_zmienna_1='';
