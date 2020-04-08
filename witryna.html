@@ -1,0 +1,163 @@
+<DOCUMENT html>
+    <html lang="pl">
+        <head>
+           <!--metadane identyfikacji-->
+           
+            <meta charset="utf-8">
+            <meta name="description" content="Witryna internetowa na potrzeby pracy dyplomowej">
+            <meta name="keywords" content="Geodezja, WebGIS, 3D">
+            <meta name="author" content="PK">
+            <title> Wirtualny Rekonesans Terenowy</title>
+            <link rel="stylesheet" href="main.css">           
+        </head>
+        <body>
+            <header>
+               <div id="logotyp">
+                    <h1 class="logo">
+                    <span style="color:#2a5daf">Wirt</span>ualny
+                    <span style="color:#2a5daf">Reko</span>nesans
+                    <span style="color:#2a5daf">Tere</span>nowy
+                    </h1>
+               </div>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Strona główna</a><li>
+                    <li><a href="rekonesans.html">Rekonesans</a><li>
+                    <li><a href="sketchup.html">Sketchup</a><li>
+                    <li><a href="analizy.html">Analizy Widoczności</a><li>
+                    <li><a href="sieciowe.html">Analizy Sieciowe</a><li>
+                    <li><a href="animacja.html">Animacja</a><li>
+                    <li><a href="VR.html">Aplikacja VR</a><li>
+                    <li><a href="witryna.html">Podsumowanie</a><li>
+                    <li><a href="Model3D.html">Model3D</a><li>
+                    <li><a href="BDOT.html">Geoportal</a><li>
+                </ul>
+            </nav>
+            
+            <div class="container">
+                <div class = "text">
+                <article>
+                    <header>
+                    <h1>Geoportal</h1>
+                        
+                        
+                        </header>
+            <p>	Geoportal to portal internetowy zapewniający dostęp do usług danych przestrzennych, tj. do usług dotyczących danych przestrzennych i będących operacjami, które mogą być wykony-wane przy użyciu oprogramowania komputerowego na nich zawartych w zbiorach danych przestrzennych lub na powiązanych z nimi metadanych. 
+            Geoportale umożliwiają w szczególności korzystanie z usług wyszukiwania, przeglądania, pobierania i przekształcania danych przestrzennych. Spełniają one istotną rolę w infrastruktu-rach danych przestrzennych (infrastrukturach informacji przestrzennej).
+
+ 
+</p>
+                    
+                    
+                    <header>
+					<h1>Funkcje Geoportalu</h1>
+                    </header>
+                    <h1>Interfejs</h1>
+                    
+                    
+                    
+                   <div class="obrazek_2">
+                      
+                        <img src="OPEN/Geoportal_podzia%C5%82.png">
+                        
+                    </div>
+                     <br></br>
+                    
+                    
+                    Jak można zauważyć w portalu znajdują się następujące przyciski lub okna odpowiadające określonym funkcjom.
+                         <br></br>
+1.	Widżet „Zoom” umożliwia użytkownikom powiększanie / pomniejszanie widoku.
+                         <br></br>
+2.	Pomiar powierzchni lub linii. Widżet „AreaMeasurement2D” oblicza i wyświetla ob-szar i obwód wielokąta w MapView. Gdy obwód jest mniejszy niż 100 km, tryb do-myślny jest płaski. Gdy obwód jest większy lub równy 100 km, tryb domyślny jest geodezyjny. Widżet „DistanceMeasurement2D” oblicza i wyświetla odległość między dwoma lub więcej punktami w MapView. Gdy odległość jest mniejsza niż 100 km, domyślny tryb jest płaski. Gdy odległość jest większa lub równa 100 km, tryb do-myślny jest geodezyjny.
+                     <br></br>
+3.	Drukowanie pliku. Widżet „Print” łączy aplikację z usługą drukowania, aby umożliwić wydrukowanie mapy. Korzysta z funkcji drukowania po stronie serwera, wysokiej jakości, korzystając z usługi ExportWebMap w ArcGIS, którą można skonfigurować za pomocą niestandardowych szablonów układu. Widżet „Print” działa z funkcją PrintTask, która generuje wersję mapy gotową do druku.
+             <br></br>
+4.	Widget „Legend” wyświetla etykiety i symbole warstw na mapie. Etykiety i odpowia-dające im symbole zależą od wartości ustawionych w rendererze warstwy. Legenda wyświetla tylko warstwy i podwarstwy widoczne w widoku.
+Legenda aktualizuje się automatycznie, kiedy:
+         <br></br>
+•	zmienia się widoczność warstwy lub podwarstwy 
+     <br></br>
+•	warstwa jest dodawana lub usuwana z mapy
+<br></br>
+•	zmienia się renderowanie, nieprzezroczystość lub tytuł warstwy
+         <br></br>
+5.	Okno wyświetlania współrzędnych. Widżet wykonuje pomiar w trybie automatycz-nym na żywo, wyświetlającym położenie kursora użytkownika podczas przesuwania się po widoku. Widżet można przełączyć do trybu przechwytywania, który będzie ak-tualizowany tylko wtedy, gdy użytkownik kliknie na widok, a także umożliwi kopio-wanie współrzędnych do schowka użytkownika.
+     <br></br>
+6.	Okno tworzenia szkiców w celu ułatwienia wykonywania operacji lub możliwości wrysowania sytuacji taktycznej lub zaznaczenia interesujących nas danych. Widget „Sketch” zapewnia prosty interfejs użytkownika do tworzenia i aktualizowania grafiki w 2D MapView. Domyślnie widget „Sketch” zawiera gotowe narzędzia do tworzenia i aktualizowania grafiki za pomocą geometrii punktu, polilinii, wielokąta, prostokąta i koła.
+ <br></br>
+7.	Okno wyszukiwania lokalizacji. Widżet „Find” zapewnia sposób przeprowadzania operacji wyszukiwania w usługach lokalizatora i / lub warstwach funkcji usługi / mapy / funkcji.
+ <br></br>
+8.	Widżet „BasemapGallery” wyświetla kolekcję obrazów reprezentujących mapy bazo-we z ArcGIS.com lub zdefiniowany przez użytkownika zestaw usług map lub obra-zów. Po wybraniu nowej mapy bazowej z obiektu „BasemapGallery” warstwy mapy bazowej mapy są usuwane i zastępowane warstwami mapy bazowej powiązanej mapy bazowej wybranej w galerii. 
+ <br></br>
+9.	Widżet „LayerList” umożliwia wyświetlanie listy warstw i włączanie / wyłączanie ich widoczności.
+
+                        
+                    <br></br>
+<p>
+            Opcją zawartą w portalu, nie zamieszczoną w kodzie jak „widget” jest wyświetlanie atrybutu liczby kondygnacji po kliknięciu na poszczególny obiekt z warstwy budynków (BUBD_A).
+            Dodatkową zakładką w stronie jest możliwość wyświetlenia modelu budynków 3D, opisanych w rozdziale IV. Scena nie zawiera żadnych dodatkowych funkcji, służy głównie do przeglądu wykonanej wizualizacji kartograficznej, jednak wymaga autoryzowanego dostępu, co potwierdza możliwość regulacji dostępu do poszczególnych danych.
+        </p>
+                     <br></br>
+
+
+
+
+
+
+
+            <div class="video">    
+                     <iframe width="600" height="600"
+                             src="https://youtu.be/w7t3amhum6c ">
+                    </iframe>  
+                    </div>
+                    
+                    
+					<h1>Podsumowanie</h1>
+                
+                        
+                    <p>    
+                Rozmaitość danych, które można zaaplikować do przygotowywanej wizualizacji po-szerza wydajność oraz predyspozycje wykorzystania w wojsku lub cywilnych obszarach dzia-łalności. Integracja danych z różnych źródeł sprzyja w podejmowaniu właściwych decyzji oraz potwierdza szeroką funkcjonalność systemów informacji geograficznej w siłach zbrojnych.
+</p>
+            
+<p>
+                Dane oraz analizy umożliwiające podejmowanie trafnych decyzji przez dowódców można publikować na serwerach wojskowych lub ogólnodostępnych w celu zgromadzenia ich w jednym miejscu do którego dostęp mogą mieć wyłącznie osoby postronne. Formą prezenta-cji takich zbiorów mogą być Geoportale lub witryny tematyczne rozbudowane o dodatkową treść.
+</p>
+        
+<p>
+                Postęp technologii 3D GIS oraz VR potwierdzają potencjał oraz możliwości alterna-tywnych treningów, których większego znaczenia możemy spodziewać się na polu militarnym.
+</p>
+
+                        <br></br>
+        
+        
+                        
+                  
+					<div>
+                        
+                   
+            
+
+
+                
+                
+                </div>
+                
+                
+                
+                
+                       
+            
+                       
+                    </p>
+                    
+                    
+                    
+                    </article>
+                 
+                </div>
+               
+                     
+            </div>
+        </body>
+    </html>

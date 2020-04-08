@@ -45,8 +45,8 @@ nav
 .menu > li
 {
     display:inline-flex;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-left:1px dashed #0a2b42;
 }
 .menu > li:first-child
@@ -123,6 +123,68 @@ figure
     
     
 }
+
+.obrazek_2 img
+{   display: flex;
+    justify-content:center;
+    
+    height:300px;
+
+    width:600px;
+    margin: auto;
+    
+    
+}
+.obrazek_3 img
+{   display: flex;
+    justify-content:center;
+    
+    height:400px;
+
+    width:800px;
+    margin: auto;
+    
+    
+}
+.obrazek_4 img
+{   display: flex;
+    justify-content:center;
+    
+    height:100px;
+
+    width:400px;
+    margin: auto;
+    
+    
+}
+
+.obrazek_5 img
+{   display:flex;
+    justify-content:center;
+    margin-left: 100px;
+    height:100px;
+
+    width:400px;
+    margin:auto;
+    
+    
+}
+
+.obrazek_5 img
+{   display:flex;
+    justify-content:center;
+    
+    height:800px;
+
+    width:600px;
+    margin:auto;
+    
+    
+}
+
+
+
+
 .video iframe
 {   display: flex;
     justify-content:center;
@@ -134,3 +196,4 @@ figure
     
     
 }
+

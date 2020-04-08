@@ -1,0 +1,274 @@
+<DOCUMENT html>
+    <html lang="pl">
+        <head>
+           <!--metadane identyfikacji-->
+           
+            <meta charset="utf-8">
+            <meta name="description" content="Witryna internetowa na potrzeby pracy dyplomowej">
+            <meta name="keywords" content="Geodezja, WebGIS, 3D">
+            <meta name="author" content="PK">
+            <title> Wirtualny Rekonesans Terenowy</title>
+            <link rel="stylesheet" href="main.css">           
+        </head>
+        <body>
+            <header>
+               <div id="logotyp">
+                    <h1 class="logo">
+                    <span style="color:#2a5daf">Wirt</span>ualny
+                    <span style="color:#2a5daf">Reko</span>nesans
+                    <span style="color:#2a5daf">Tere</span>nowy
+                    </h1>
+               </div>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Strona główna</a><li>
+                    <li><a href="rekonesans.html">Rekonesans</a><li>
+                    <li><a href="sketchup.html">Sketchup</a><li>
+                    <li><a href="analizy.html">Analizy Widoczności</a><li>
+                    <li><a href="sieciowe.html">Analizy Sieciowe</a><li>
+                    <li><a href="animacja.html">Animacja</a><li>
+                    <li><a href="VR.html">Aplikacja VR</a><li>
+                    <li><a href="witryna.html">Podsumowanie</a><li>
+                    <li><a href="Model3D.html">Model3D</a><li>
+                    <li><a href="BDOT.html">Geoportal</a><li>
+                </ul>
+            </nav>
+            
+            <div class="container">
+                <div class = "text">
+                <article>
+                    <header>
+                    <h1>Aplikacja w wirtualnej rzeczywistości</h1>
+                        
+                        
+                        </header>
+            <p>	Wizualizacja nie opiera się tylko na animacjach czy wykonanych zdjęciach obiektów lub budynków, rekonesans jest w rzeczywistości czynnością, która ma zapewnić zapoznanie się z terenem. Dlatego czasami pliki wideo nie są wystarczające, w  pracy pokazano również inny sposób wykorzystania modelu, który coraz częściej jest wykorzystywany w siłach zbrojnych jak również w cywilnych koncernach. Taka forma połączenia kartografii, GIS oraz wirtualnej rzeczywistości zapewnia nie tylko wizualizacje ale również daje nam możliwość analizy oraz eksploracji z punktu widzenia pierwszej osoby. Wirtualna rzeczywistość (VR) jest technologią komputerową pozwalającą na tworzenie świata 3D, w którym użytkownik uczestniczy poprzez spacery czy przeloty. 
+            Komisja ds. Wizualizacji z Międzynarodowego Stowarzyszenia 
+            Integracja GIS i wirtualnej rzeczywistości do wizualizacji i eksploracji  danych geograficznych wydzieliła tematykę badań nad potencjałem wykorzystania tego rozwiązania w celu oddania jak najwierniej rzeczywistości(zamiast abstrakcji). 
+
+ 
+</p>
+                    
+                
+                    
+                    <header>
+					<h1>Google Cardboard</h1>
+                    </header>
+                    <div class="obrazek_4">
+                        <img src="OPEN/Cardboard-logo.png">
+                    </div>
+                
+                    <p>
+                    W pracy opisano wykonanie aplikacji pod platformę „Google Cardboard” stworzoną przez firmę Google do użycia z kartonowymi goglami oraz smartfonem.
+                    Założenie polega na wykorzystaniu tańszej formy gogli w przeciwieństwie do czołowych produktów takich jak HTC Vive lub Oculus, których cena dochodzi do kilku tysięcy złotych.
+                    Jednak są one bardziej rozbudowane, posiadają kontrolery, dzięki którym możemy w więk-szym stopniu odzwierciedlić dane środowisko oraz wywoływać różne interakcje z przedmiotami w nich zawartymi.
+                    „Google Cardboard” jest więc dobrym rozwiązaniem dla nowych i mniej wymagających  użytkowników bez doświadczenia. Szeroka gama aplikacji dostępnych w Sklepie Play lub Apple App Store wymagają jedynie zainstalowania i umieszczenia smartfona w okularach VR. Aplikacja opiera się na wykorzystaniu obrazu stereoskopowego, ponieważ dzieli ekran telefonu w połowie, tworząc dwa obrazy po jednym dla każdego z oka.</p>
+                    
+                    <div class="obrazek_2">
+                        <img src="OPEN//VR_Stereo.jpg">
+                </div>
+                    <br></br>
+                            
+                        
+                        <h1>VR - wykorzystanie</h1>
+   <p>
+                        Opracowanie aplikacji jest kolejnym sposobem jaki przedstawiono w pracy umożliwiającym przeniesienie użytkownika do wirtualnej rzeczywistości, lub zaimplementowanie jej w symulatorach. VR rozbudowane o dodatkowe czynniki takie jak zmiany pogodowe,  przedmioty naturalne lub antropogeniczne z którymi użytkownik może wchodzić w interakcję potwierdza tezę przydatności w szkoleniu wojskowym. W takiej formie mamy możliwość testowania przeprowadzonych analiz omówionych wyżej, oceniania ich wyników lub zmiany parametrów dostosowując je do wniosków z odbytego rekonesansu terenowego w rzeczywistości symulowanej.
+        </p>
+        <br></br>
+       
+         <div class="obrazek_2">
+                    <img src="OPEN/Rigid_Body.PNG">
+              
+            <img src="OPEN/bron.PNG">
+                
+        </div>
+           
+            
+            
+            
+            
+        <br></br>
+            <p>
+                        Sylwetka reprezentująca użytkownika nie umożliwiała jednak poruszania się po modelu ze względu na wykorzystanie tańszej wersji gogli, nie wyposażonych w kontrolery.
+                        Problem ten został rozwiązany za pomocą napisanego kodu umożliwiającego poruszanie się za pomocą zmiany kąta patrzenia przez eksploratora. W kodzie zostały zadeklarowane parametry kąta oraz prędkości z jaką ma się poruszać obiekt reprezentujący odbiorcę.
+
+</p>
+                        <br></br>
+        
+            <h1>Animacja przedstawiająca widok pierwszoosobowy w wykonanej aplikacji </h1>
+                                            <br></br>
+                    <div class="video">    
+                     <iframe width="600" height="600"
+                             src="https://youtu.be/4qPnl8rrKBY">
+                    </iframe>  
+                    </div>
+                    
+                    
+                    </br>
+               
+
+
+                  <h1>Rozwój VR</h1>
+                    <br></br>
+<p>
+                    Wirtualna rzeczywistość ma szerokie zastosowanie w wojsku, obejmuje wojska lądowe, marynarki oraz siły powietrzne oraz wszędzie tam, gdzie można ją wykorzystać w celach szkoleniowych. Jest ona szczególnie przydatna w szkoleniu żołnierzy w sytuacjach bojowych lub innych zagrażających ich życiu, gdzie muszą się oni nauczyć szybko reagować w odpowiedni sposób do zaistniałej sytuacji.
+                </p>
+                        
+                    <div class="obrazek_2">
+                    
+              
+            <img src="OPEN/Vr_training.jpg">
+                
+        </div>
+
+                <p>
+                    VR umożliwia symulowanie tych scenariuszy, ale bez ryzyka śmierci czy poważnych obrażeń. Dzięki jej zastosowaniu jesteśmy w stanie odtworzyć określony scenariusz jak: walka z wrogiem itd. Jest to na pewno bezpieczniejsze i mniej kosztowne niż tradycyjne metody szkoleniowe 
+
+
+                        </p>
+                     <h1>Wojskowe zastosowania rzeczywistości wirtualnej</h1>
+                <h1>Symulatory lotu</h1>
+<p>
+    Symulatory lotu są jedną z najpopularniejszych form. Są używane do szkolenia pilotów we wszystkich gałęziach sił zbrojnych. Służą do  nauczania umiejętności latania, radzenia sobie w sytuacjach awaryjnych oraz komunikacji z kontrolą naziemną np. wieżą. Symulatory lotu różnią się typem oprogramowania, którego używają ale ich struktura pozostaje taka sama. Najczęściej przybierają postać zamkniętego kokpitu, zamontowanego na podnośniku hydraulicznym lub układzie elektronicznym.
+    Symulator będzie zawierał serię monitorów wyświetlających obrazy wirtualnego krajobrazu, na przykład scenariusz pola walki. Obrazy te są przedstawiane w dokładnie taki sam sposób, jak w oknach samolotów świata rzeczywistego, które wymagają od pilota szkolenia odpowiedniego reagowania.
+    Symulator jest ustawiony tak, aby pasował do prawdziwego samolotu. Osprzęt, panel wyposażenia i inne elementy są dokładnie w tym samym miejscu, w jakim znajdowałyby się na prawdziwym statku powietrznym.
+    
+</p>
+                        <div class="obrazek_2">
+                    
+              
+            <img src="OPEN/flight_simulator.jpg">
+                
+        </div>
+<p>
+    Na przykładzie obrazka  pilot przesunie joystick, aby umożliwić symulatorowi zmianę kierunku. Kiedy to robi, symulator dostarcza sprzężenie zwrotne siły przez joystick, co pozwala pilotowi poczuć symulator naśladujący działania prawdziwego samolotu. Pilot dostosowuje swoje ruchy zgodnie z tymi informacjami zwrotnymi. 
+    
+</p>
+
+
+
+<h1>Symulatory pola walki</h1>
+<p>
+    Technologia wirtualnej rzeczywistości jest wykorzystywana do ćwiczeń wojskowych, których celem jest symulowanie manewrów bojowych, ale bez ryzyka fizycznego zagrożenia dla uczestników oraz generowania kosztów. Oznacza to badanie wrogich środowisk, zapoznanie się z terenem  i radzenie sobie z nieoczekiwanymi lub nieuzasadnionymi sytuacjami. 
+    
+</p>
+                        <div class="obrazek_2">
+                    
+              
+            <img src="OPEN/virtual-reality-army-exercises.jpg">
+                
+        </div>
+<p>
+    Jednym z zastosowaniem jest możliwość oddania scenariusza pola walki w postaci dużego środowiska 3D jak przedstawiono w pracy. Oficerowie wykorzystują te modele do planowania swoich strategii oraz testowania decyzji. Pozwala im to ocenić różne opcje, gdzie i w jakim zakresie rozmieścić dany pododdział.
+    Dodatkowo prócz specjalnych okularów, trenujących żołnierzy można wyposażyć w sztuczną broń VR, która wygląda jak autentyczna. Wszystko to pozwala nowym rekrutom uczestniczyć w scenariuszach treningowych, w których są wrzucani w potencjalnie niebezpieczne sytuacje, ale nadal w kontrolowanym środowisku. Nie ma niebezpieczeństwa zranienia, chociaż jest to powielane w przypadku treningu medycznego 
+
+    
+</p>
+
+
+<h1>VR i praca zespołowa</h1>
+<p>
+    Celem jest nauczenie rekrutów, znaczenia pracy zespołowej , przestrzegania odpowiednich instrukcji oraz rozkazów dowódcy. Jest to idealna metoda do nabycia umiejętności niezbędnych do być efektywnym członkiem danego pododdziału. Co więcej mogą się uczyć oglądając bardziej doświadczonych członków zespołu 
+    
+</p>
+                        <div class="obrazek_2">
+                    
+              
+            <img src="OPEN/wikimediacommons.png">
+                
+        </div>
+
+
+
+
+<h1>Sytuacja bojowa VR</h1>
+<p>
+    Ideą jest przygotowanie żołnierzy do prawdziwej walki. Uczy to radzenia sobie z wydarzeniami nieoczekiwanymi takimi jak np. atak snajpera. Sytuacje pokazują różnicę miedzy dobrą a złą decyzją. Tego typu doświadczenia są ważne dla przyszłych dowodzących, którzy są odpowiedzialni za grupę ludzi. Istnieje wiele złożonych procesów związanych z dowodzeniem, które młody dowódca może nabyć tylko w formie treningowej. Od strony rekrutów jest to również nauka nawigacji oraz poruszania się po wrogim terenie oraz wyrabianie nawyków takich jak radzenie sobie z wrogo nastawionymi mieszkańcami, pilnowanie niespodziewanych wybuchów (IED), zamachowców itd. Chodzi głównie o opanowanie i radzenie sobie w sytuacjach stresowych.
+    
+</p>
+                        <div class="obrazek_2">
+                    
+              
+            <img src="OPEN/combat_training.jpg">
+                
+        </div>
+
+
+<h1>Symulatory okrętów podwodnych</h1>
+<p>
+    Symulatory okrętów podwodnych podobne są do symulatorów lotu z drobnymi różnicami. Główna różnica polega na tym, że symulator łodzi nie wykorzystuje ekranów monitorów wyświetlających obrazy ze środowiska VR. Zamiast tego wyświetlane są nich wskazania i parametry przyrządów, które pomagają ocenić położenie łodzi podwodnej oraz przejście przez wodę. Monitory te odzwierciedlają zmiany temperatury, ruchu w taki sam sposób jakby działo się to w prawdziwym okręcie. „Kokpit” łodzi również jest zamontowany na podnośniku hydraulicznym co umożliwia sterowanie łodzią.
+    
+</p>
+                        <div class="obrazek_2">
+                    
+              
+            <img src="OPEN/stuart-cooper-subconsole-screenshot1.jpg">
+                
+        </div>
+
+
+
+
+
+<h1>Wirtualny most na statku</h1>
+<p>
+   „Wirtualny mostek” to kolejna pomoc szkoleniowa opierająca się na wykorzystaniu tej technologii. Mostek wyposażony jest w dużą ilość funkcji od których zależy powodzenie misji statku. Zawiera on zestawy osprzętu i narzędzi niezbędnego do obsługi statku , które wymagają od operatora złożonych umiejętności.
+    Umożliwia on prowadzenie okrętów wojennych, obsługę statków i radzenie sobie w sytuacjach awaryjnych. Szkoleni poznają pracę zespołową i radzą sobie w sytuacjach kryzysowych, takich jak wrogie ataki innego statku w wyniku interakcji z urządzeniem.
+
+    
+</p>
+                        <div class="obrazek_2">
+                    
+              
+            <img src="OPEN/ship_bridge.jpg">
+                
+        </div>
+
+
+<h1>Polskie wirtualne poligony</h1>
+<p>
+   W Polsce jest kilka naśladowców amerykańskiego The West Point Simulation Center. Laboratorium Wirtualnego Latania w Gliwicach, Centrum Symulacji i Komputerowych Gier Wojennych w Warszawie to tylko największe z nich. Ośrodki te korzystają z nowych technologii szkolenia żołnierzy. Gogle VR to jedne z nich, należą do nich również wirtualne strzelnice, gdzie obraz wyświetlany jest na ogromnym ekranie. Gogle VR w połączeniu z dedykowanymi aplikacjami minimalizują jednak koszty, poprawiają mobilność technologii i koniec końców są efektowniejsze i efektywniejsze.
+    Wiadomo jednak, że wirtualne szkolenie nigdy nie zastąpi fizycznego lub  szkolenia operacyjnego oraz zebranego doświadczenia podczas różnych ćwiczeń wojskowych. Nadal jednak odgrywa i odgrywać będzie dużą rolę ze względu na duże zalety technologiczne oraz finansowe. Po pierwsze szybki rozwój technologii które, oferują nowe, prawie realne rozwiązania udostępnianie dostępnych narzędzi, aby zaspokoić różne potrzeby wymagań wojskowych poza szkoleniem. Po drugie VR oferuje rozwiązania bez powodowania strat, uszkodzeń sprzętu lub ludzi. Podczas wykonywania operacji pozwala podjąć poprawną i szybką decyzję [17].
+
+
+    
+</p>
+                        
+
+
+
+
+
+
+
+
+                  
+					<div>
+                        
+                   
+            
+
+
+                
+                
+                </div>
+                
+                
+                
+                
+                       
+            
+                       
+                    </p>
+                    
+                    
+                    
+                    </article>
+                 
+                </div>
+               
+                     
+            </div>
+        </body>
+    </html>
